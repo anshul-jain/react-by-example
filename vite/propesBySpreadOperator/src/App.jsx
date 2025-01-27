@@ -26,12 +26,12 @@ function Header() {
   );
 }
 
-function CoreConcepts(props) {
+function CoreConcepts({ image, title, description }) { // Destructuring the props object to get the image, title, and description properties
   return (
     <li>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
     </li>
   );
 }
@@ -74,6 +74,7 @@ function App() {
 }
 */
 // Function to render the main content of the app with the Header and CoreConcepts components defined using the CORE_CONCEPTS array
+// Using the spread operator to pass the properties of the second object in the CORE_CONCEPTS array
 function App() {
   return (
     <div>
@@ -87,21 +88,9 @@ function App() {
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description} 
             />
-            <CoreConcepts
-               image={CORE_CONCEPTS[1].image}
-               title={CORE_CONCEPTS[1].title}
-               description={CORE_CONCEPTS[1].description} 
-            />
-            <CoreConcepts
-               image={CORE_CONCEPTS[2].image}
-               title={CORE_CONCEPTS[2].title}
-               description={CORE_CONCEPTS[2].description} 
-            />
-            <CoreConcepts
-               image={CORE_CONCEPTS[3].image}
-               title={CORE_CONCEPTS[3].title}
-               description={CORE_CONCEPTS[3].description} 
-            />
+            <CoreConcepts {...CORE_CONCEPTS[1]} />
+            <CoreConcepts {...CORE_CONCEPTS[2]} />
+            <CoreConcepts {...CORE_CONCEPTS[3]} />
           </ul>
         </section>
       </main>
