@@ -2,18 +2,11 @@
 import propsImg from './assets/config.png';
 import jsxImg from './assets/jsx-ui.png';
 import stateImg from './assets/state-mgmt.png';*/
-import Header from './components/Header'; // Importing the Header component from the Header.js file
-import { CORE_CONCEPTS } from './data'; // Importing the CORE_CONCEPTS array from the data.js file
+import Header from './components/Header'; // Importing the Header component from the Header.jsx file
+import CoreConcepts from './components/CoreConcepts'; // Importing the CoreConcepts component from the CoreConcepts.jsx file
 
-function CoreConcepts({ image, title, description }) { // Destructuring the props object to get the image, title, and description properties
-  return (
-    <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </li>
-  );
-}
+
+import { CORE_CONCEPTS } from './data'; // Importing the CORE_CONCEPTS array from the data.js file
 
 // Function to render the main content of the app with the Header and CoreConcepts components defined inline with the properties
 /*
