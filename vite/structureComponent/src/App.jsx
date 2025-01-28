@@ -1,30 +1,9 @@
-import headerImg from './assets/react-core-concepts.png';
 /*import componentsImg from './assets/components.png';
 import propsImg from './assets/config.png';
 import jsxImg from './assets/jsx-ui.png';
 import stateImg from './assets/state-mgmt.png';*/
+import Header from './components/Header'; // Importing the Header component from the Header.js file
 import { CORE_CONCEPTS } from './data'; // Importing the CORE_CONCEPTS array from the data.js file
-
-
-const reactDescriptions = ['Fundamental', 'Crucial', 'Core', 'Essential'];
-
-// Function to generate a random integer between 0 and the max value
-function generateRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function Header() {
-  return (
-    <header>
-      <img src={headerImg} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {reactDescriptions[generateRandomInt(3)]} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
 
 function CoreConcepts({ image, title, description }) { // Destructuring the props object to get the image, title, and description properties
   return (
