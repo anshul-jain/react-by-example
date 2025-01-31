@@ -4,7 +4,7 @@ import jsxImg from './assets/jsx-ui.png';
 import stateImg from './assets/state-mgmt.png';*/
 import Header from './components/Header'; // Importing the Header component from the Header.jsx file
 import CoreConcepts from './components/CoreConcepts'; // Importing the CoreConcepts component from the CoreConcepts.jsx file
-
+import TabButton from './components/TabButton'; // Importing the TabButton component from the TabButton.jsx file
 
 import { CORE_CONCEPTS } from './data'; // Importing the CORE_CONCEPTS array from the data.js file
 
@@ -64,6 +64,15 @@ function App() {
             <CoreConcepts {...CORE_CONCEPTS[2]} />
             <CoreConcepts {...CORE_CONCEPTS[3]} />
           </ul>
+        </section>
+        <section id="examples">
+        <h2>Examples</h2>
+          <menu>
+            <TabButton>Component</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
+          </menu>
         </section>
       </main>
     </div>
