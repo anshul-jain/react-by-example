@@ -1,7 +1,7 @@
-## Discription
+## Description
 
 <!-- 
-Discrible your PR
+Describle your PR
 This PR [adds/removes/fixes/replaces] the [feature/bug/etc]. 
 -->
 
