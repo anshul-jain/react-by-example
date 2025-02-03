@@ -48,6 +48,9 @@ function App() {
 // Function to render the main content of the app with the Header and CoreConcepts components defined using the CORE_CONCEPTS array
 // Using the spread operator to pass the properties of the second object in the CORE_CONCEPTS array
 function App() {
+  function handleSelect(selectedButton) {
+    console.log(selectedButton);
+  }
   return (
     <div>
       <Header />
@@ -58,7 +61,7 @@ function App() {
             <CoreConcepts
               image={CORE_CONCEPTS[0].image}
               title={CORE_CONCEPTS[0].title}
-              description={CORE_CONCEPTS[0].description} 
+              description={CORE_CONCEPTS[0].description}
             />
             <CoreConcepts {...CORE_CONCEPTS[1]} />
             <CoreConcepts {...CORE_CONCEPTS[2]} />
@@ -66,12 +69,12 @@ function App() {
           </ul>
         </section>
         <section id="examples">
-        <h2>Examples</h2>
+          <h2>Examples</h2>
           <menu>
-            <TabButton>Component</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={() => handleSelect('Component')} >Component</TabButton>
+            <TabButton onSelect={() => handleSelect('JSX')}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
           </menu>
         </section>
       </main>
