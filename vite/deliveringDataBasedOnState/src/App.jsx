@@ -7,7 +7,7 @@ import Header from './components/Header'; // Importing the Header component from
 import CoreConcepts from './components/CoreConcepts'; // Importing the CoreConcepts component from the CoreConcepts.jsx file
 import TabButton from './components/TabButton'; // Importing the TabButton component from the TabButton.jsx file
 
-import { CORE_CONCEPTS } from './data'; // Importing the CORE_CONCEPTS array from the data.js file
+import { CORE_CONCEPTS, EXAMPLES } from './data'; // Importing the CORE_CONCEPTS array and Examples from the data.js file
 
 // Function to render the main content of the app with the Header and CoreConcepts components defined inline with the properties
 /*
@@ -52,7 +52,7 @@ function App() {
   // selectedTopic : state variable to store the selected Topic value
   // setSelectedTopic : function to update the selected Topic value
   // useState('Please click a button') : initial value of the selectedTopic state variable
-  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
+  const [selectedTopic, setSelectedTopic] = useState('components');
 
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
@@ -78,12 +78,20 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect('Component')} >Component</TabButton>
-            <TabButton onSelect={() => handleSelect('JSX')}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
+            <TabButton onSelect={() => handleSelect('components')} >Component</TabButton>
+            <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>
+                {EXAMPLES[selectedTopic].code}
+              </code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
