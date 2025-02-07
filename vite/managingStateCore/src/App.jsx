@@ -2,6 +2,7 @@
 import propsImg from './assets/config.png';
 import jsxImg from './assets/jsx-ui.png';
 import stateImg from './assets/state-mgmt.png';*/
+import { useState } from 'react'; // Importing the useState hook from the react package to manage the state of the app component
 import Header from './components/Header'; // Importing the Header component from the Header.jsx file
 import CoreConcepts from './components/CoreConcepts'; // Importing the CoreConcepts component from the CoreConcepts.jsx file
 import TabButton from './components/TabButton'; // Importing the TabButton component from the TabButton.jsx file
@@ -48,7 +49,13 @@ function App() {
 // Function to render the main content of the app with the Header and CoreConcepts components defined using the CORE_CONCEPTS array
 // Using the spread operator to pass the properties of the second object in the CORE_CONCEPTS array
 function App() {
+  // selectedTopic : state variable to store the selected Topic value
+  // setSelectedTopic : function to update the selected Topic value
+  // useState('Please click a button') : initial value of the selectedTopic state variable
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
+
   function handleSelect(selectedButton) {
+    setSelectedTopic(selectedButton);
     console.log(selectedButton);
   }
   return (
@@ -76,6 +83,7 @@ function App() {
             <TabButton onSelect={() => handleSelect('Props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect('State')}>State</TabButton>
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </div>
