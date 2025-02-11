@@ -2,7 +2,7 @@
 import propsImg from './assets/config.png';
 import jsxImg from './assets/jsx-ui.png';
 import stateImg from './assets/state-mgmt.png';*/
-import { useState } from 'react'; // Importing the useState hook from the react package to manage the state of the app component
+import { Fragment, useState } from 'react'; // Importing the useState hook from the react package to manage the state of the app component
 import Header from './components/Header'; // Importing the Header component from the Header.jsx file
 import CoreConcepts from './components/CoreConcepts'; // Importing the CoreConcepts component from the CoreConcepts.jsx file
 import TabButton from './components/TabButton'; // Importing the TabButton component from the TabButton.jsx file
@@ -72,7 +72,7 @@ function App() {
   }
 
   return (
-    <div>
+    <Fragment>
       <Header />
       <main>
         <section id="core-concepts">
@@ -92,7 +92,7 @@ function App() {
           {tabContent}
         </section>
       </main>
-    </div>
+    </Fragment>
   );
 }
 
