@@ -4,10 +4,10 @@ import jsxImg from './assets/jsx-ui.png';
 import stateImg from './assets/state-mgmt.png';*/
 import { Fragment, useState } from 'react'; // Importing the useState hook from the react package to manage the state of the app component
 import Header from './components/Header'; // Importing the Header component from the Header.jsx file
-import CoreConcepts from './components/CoreConcepts'; // Importing the CoreConcepts component from the CoreConcepts.jsx file
+import CoreConcept from './components/CoreConcept'; // Importing the CoreConcept component from the CoreConcept.jsx file
 import TabButton from './components/TabButton'; // Importing the TabButton component from the TabButton.jsx file
 
-import { CORE_CONCEPTS, EXAMPLES } from './data'; // Importing the CORE_CONCEPTS array and Examples from the data.js file
+import { EXAMPLES } from './data'; // Importing the CORE_CONCEPTS array and Examples from the data.js file
 
 // Function to render the main content of the app with the Header and CoreConcepts components defined inline with the properties
 /*
@@ -75,12 +75,7 @@ function App() {
     <Fragment>
       <Header />
       <main>
-        <section id="core-concepts">
-          <h2>Core Concepts</h2>
-          <ul>
-            {CORE_CONCEPTS.map((conceptItem) => <CoreConcepts {...conceptItem} />)}
-          </ul>
-        </section>
+        <CoreConcept/>
         <section id="examples">
           <h2>Examples</h2>
           <menu>
