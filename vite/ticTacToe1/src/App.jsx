@@ -1,9 +1,20 @@
+import Player from "./components/Player";
 
 function App() {
   
 
   return (
-    <p>Coming soon..</p>
+    <menu>
+      <div id="game-container">
+        Player
+        <ol id="players">
+         <Player name="Player 1" symbol="X" />
+         <Player name="Player 2" symbol="O" />
+        </ol>
+        GAME BOARD
+      </div>
+      LOG
+    </menu>
   )
 }
 
