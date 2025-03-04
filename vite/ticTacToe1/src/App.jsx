@@ -32,7 +32,7 @@ function App() {
         GAME BOARD
         <GameBoard onSelectSquare={handleSelectSquare} turns={gameTurns} />
       </div>
-      <Log />
+      <Log turns={gameTurns}/>
     </menu>
   )
 }
