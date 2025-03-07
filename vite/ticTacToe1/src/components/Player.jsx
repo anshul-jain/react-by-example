@@ -1,11 +1,15 @@
 import { useState } from "react";
 
-export default function Player({ initialName, symbol, isActive }) {
+export default function Player({ initialName, symbol, isActive, onChangeName }) {
     const [playerName, setPlayerName] = useState(initialName); // State hook can be used as required
     const [isEditing, setIsEditing] = useState(false);
 
     function handleEditClick() {
         setIsEditing(isEditing => !isEditing); // schedules a state update to true if false, or false if true
+        if (isEditing) {
+            console.log('handleEditClick', playerName);
+            onChangeName(symbol, playerName);
+        }
     }
 
     function handleChange(event) {
@@ -19,7 +23,7 @@ export default function Player({ initialName, symbol, isActive }) {
     }
 
     return (
-        <li className={isActive ? 'active': undefined}>
+        <li className={isActive ? 'active' : undefined}>
             {editablePlayerName}
             <span className="player-symbol">{symbol}</span>
             <button onClick={handleEditClick}>{isEditing ? 'Save' : 'Edit'}</button>
