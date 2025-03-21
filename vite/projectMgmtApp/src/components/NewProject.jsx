@@ -19,7 +19,6 @@ export default function NewProject() {
                 <Input label="Description" textarea />
                 <Input label="Due Date" />
             </div>
-
         </div>
     );
 }
